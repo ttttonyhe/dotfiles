@@ -29,6 +29,7 @@ zinit wait lucid light-mode for \
       zdharma/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
       zsh-users/zsh-autosuggestions \
+      marlonrichert/zsh-autocomplete \
   blockf atpull'zinit creinstall -q .' \
       zsh-users/zsh-completions
 
@@ -36,3 +37,10 @@ zinit wait lucid light-mode for \
 
 # Other configurations
 alias ls="ls -a"
+alias vim="nvim"
+alias vi="nvim"
+
+# Start shell with tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi

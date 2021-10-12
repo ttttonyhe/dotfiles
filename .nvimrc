@@ -38,6 +38,14 @@ set colorcolumn=80
 
 set cmdheight=2
 
+" WSL yank support
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
@@ -61,6 +69,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
