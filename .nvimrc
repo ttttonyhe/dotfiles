@@ -60,6 +60,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'airblade/vim-gitgutter'
+Plug 'psliwka/vim-smoothie'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -122,19 +123,24 @@ nmap <S-Up> v<Up>
 nmap <S-Down> v<Down>
 nmap <S-Left> v<Left>
 nmap <S-Right> v<Right>
-vmap <S-Up> <Up>
-vmap <S-Down> <Down>
-vmap <S-Left> <Left>
-vmap <S-Right> <Right>
 imap <S-Up> <Esc>v<Up>
 imap <S-Down> <Esc>v<Down>
 imap <S-Left> <Esc>v<Left>
 imap <S-Right> <Esc>v<Right>
 
+vmap <S-Up> <Up>
+vmap <S-Down> <Down>
+vmap <S-Left> <Left>
+vmap <S-Right> <Right>
+
+
 vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i
-map <C-v> pi
+vmap <Bs> d<Esc>i
+nmap <C-s> <Esc>:w<Cr>
+map <C-v> p
 imap <C-v> <Esc>pi
+imap <C-z> <Esc>ui
 
 " coc config
 let g:coc_global_extensions = [
@@ -144,8 +150,15 @@ let g:coc_global_extensions = [
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
-  \ 'coc-python',
+  \ 'coc-css',
+  \ 'coc-emmet',
+  \ 'coc-html',
+  \ 'coc-tailwindcss',
+  \ 'coc-spell-checker',
+  \ 'coc-yaml',
+  \ 'coc-markdownlint'
   \ ]
+
 " from readme
 " if hidden is not set, TextEdit might fail.
 set hidden " Some servers have issues with backup files, see #649 set nobackup set nowritebackup " Better display for messages set cmdheight=2 " You will have bad experience for diagnostic messages when it's default 4000.
@@ -202,12 +215,16 @@ endfunction
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Coc-css Scss configuration
+autocmd FileType scss setl iskeyword+=@-@
+
 " Remap for rename current word
 nmap <F2> <Plug>(coc-rename)
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <S-M-f>  <Esc>:Fromat<Cr> 
+nmap <S-M-f>  <Esc>:Format<Cr>
+imap <S-M-f>  <Esc>:Format<Cr>i
 
 augroup mygroup
   autocmd!
