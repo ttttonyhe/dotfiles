@@ -23,3 +23,4 @@ NeoVim                     |Plugins
 
 ## ZSH (`.zshrc`)
 + Plugin Manager: Zinit ([zdharma/zinit](https://github.com/zdharma/zinit))
++ Prompt: Pure ([sindresorhus/pure](https://github.com/sindresorhus/pure))
