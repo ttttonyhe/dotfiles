@@ -18,7 +18,7 @@ My opinionated configurations / dotfile collection
 <br/>
 
 ## Font
-+ JetBrains Mono Regular
++ [JetBrains Mono](https://www.jetbrains.com/lp/mono) Regular
 + Patched for [Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 + Supports ligatures
 
