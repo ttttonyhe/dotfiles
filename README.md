@@ -1,5 +1,5 @@
 # Dotfiles
-My opinionated configurations / dotfile collection
+My opinionated configurations / dotfiles collection
 
 <br/>
 
