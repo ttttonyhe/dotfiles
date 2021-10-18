@@ -11,7 +11,7 @@ My opinionated configurations / dotfiles collection
 
 ## Color Scheme
 ![One Dark](https://raw.githubusercontent.com/joshdick/onedark.vim/main/img/color_reference.png)
-+ iTerm 2: [one-dark/iterm-one-dark-them](https://github.com/one-dark/iterm-one-dark-theme)
++ iTerm 2: [one-dark/iterm-one-dark-theme](https://github.com/one-dark/iterm-one-dark-theme)
 + Windows Terminal: [yosukes-dev/one-dark-windows-terminal](https://github.com/yosukes-dev/one-dark-windows-terminal)
 + NeoVim: [joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)
 
