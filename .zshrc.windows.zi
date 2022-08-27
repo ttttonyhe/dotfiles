@@ -1,0 +1,20 @@
+# Zinit
+source <(curl -sL https://git.io/zi-loader); zzinit
+
+# Zinit Plugins
+zi light-mode for @sindresorhus/pure
+
+zi wait lucid for \
+  atinit"ZI[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+     z-shell/F-Sy-H \
+    blockf \
+       zsh-users/zsh-completions \
+    atload"!_zsh_autosuggest_start" \
+       zsh-users/zsh-autosuggestions
+
+# Other Configurations
+alias ls="exa --long --header --git"
+alias cat="batcat --paging=never"
+
+# GPG
+export GPG_TTY="$(tty)"
